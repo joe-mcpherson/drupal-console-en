@@ -1,0 +1,23 @@
+description: 'Export a specific paragraph type and their fields.'
+arguments:
+    paragraph-type: 'Paragraph Type to be exported'
+questions:
+    paragraph-type: 'Paragraph Type to be exported'
+    optional-config: 'Export paragraph type in module as an optional configuration'
+messages:
+    paragraph-type-exported: 'Exporting paragraph type'
+options:
+    optional-config: 'Export paragraph type as an optional YAML configuration in your module'
+    remove-uuid: 'If set, the configuration will be exported without uuid key.'
+    remove-config-hash: 'If set, the configuration will be exported without the default site hash key.'
+examples:
+    - description: 'Provide a paragraph type  and module name'
+      execution: |
+        drupal config:export:paragraph:type page \
+          --module="demo"
+    - description: 'If you want export paragraph type provide the optional config'
+      execution: |
+        drupal config:export:paragraph:type page \
+          --module="demo" \
+          --optional-config 
+
